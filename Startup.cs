@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VueCliMiddleware;
 
 namespace dotnetvue
 {
@@ -59,7 +60,7 @@ namespace dotnetvue
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
+                    spa.UseVueCli(npmScript: "serve", port: 8080);
                 }
             });
         }
